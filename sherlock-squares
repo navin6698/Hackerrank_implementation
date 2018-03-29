@@ -1,3 +1,16 @@
+Simply count # of integers (inclusive) between the square roots of A and B
+Counting the number of squares between A and B is somewhat
+harder since we have to calculate squares and see which ones fall in between the desired range.
+Instead of calculating squares, we can take the square root of everything. That is, take the square root of A, 
+take the square root of B, and simply see how many numbers fall in between this range.
+
+So if, A is 9, and B is 16, we have the range [9,16]. After taking the square roots, we have the range [3,4],
+which we just count how many numbers are in that (inclusive) range, which is 2.
+
+If instead our original range was [8,17], taking the square roots would still give [3,4] due to the Math.ceil() and Math.floor() 
+functions, and we have 2 numbers in that (inclusive) range.
+
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
