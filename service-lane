@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int t = in.nextInt();
+        int[] width = new int[n];
+        for(int width_i = 0; width_i < n; width_i++){
+            width[width_i] = in.nextInt();
+        }
+        int[][] cases = new int[t][2];
+        for(int cases_i = 0; cases_i < t; cases_i++){
+            for(int cases_j = 0; cases_j < 2; cases_j++){
+                int start=in.nextInt();
+                int end=in.nextInt();
+                int ans=9999;
+                for(int i=start;i<=end;i++){
+                    if(ans>width[i])
+                       ans=width[i];
+                }
+                System.out.println(ans);
+            }
+        }
+
+        in.close();
+    }
+}
