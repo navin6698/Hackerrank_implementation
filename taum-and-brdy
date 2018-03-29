@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+ 
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int b = in.nextInt();
+            int w = in.nextInt();
+            int x = in.nextInt();
+            int y = in.nextInt();
+            int z = in.nextInt();
+          long priceB = Math.min(x, y + z); // conversion price
+            long priceW = Math.min(y, x + z); // conversion price
+            System.out.println(b * priceB + w * priceW);
+        }
+        in.close();
+    }
+}
