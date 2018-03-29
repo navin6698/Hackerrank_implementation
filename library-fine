@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+ public static int fine(int da, int ma, int ya, int de, int me, int ye) {
+    if(ye < ya) return 10000;
+    if(ye > ya) return 0;
+
+    if(me < ma) return 500 * (ma - me);
+    if(me > ma) return 0;
+
+    if(de < da) return 15 * (da - de);
+    return 0;
+}
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int d1 = in.nextInt();
+        int m1 = in.nextInt();
+        int y1 = in.nextInt();
+        int d2 = in.nextInt();
+        int m2 = in.nextInt();
+        int y2 = in.nextInt();
+        int result = fine(d1, m1, y1, d2, m2, y2);
+        System.out.println(result);
+        in.close();
+    }
+}
