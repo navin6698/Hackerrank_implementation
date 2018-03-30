@@ -1,0 +1,23 @@
+static int surfaceArea(int[][] A) {
+       
+        int totalArea=0;
+        int removedArea=0;
+        for(int i=0;i<A.length;i++){
+            for(int j=0;j<A[i].length;j++){
+                int currentBlock=A[i][j];
+                if(currentBlock!=0){
+                if(i>0)
+                    removedArea+=Math.min(currentBlock,A[i-1][j]);//top block
+                if(i<A.length-1)
+                    removedArea+=Math.min(currentBlock,A[i+1][j]);//bottom. block
+                if(j>0)
+                    removedArea+=Math.min(currentBlock,A[i][j-1]);//left block
+                if(j<A[0].length-1)
+                    removedArea+=Math.min(currentBlock,A[i][j+1]);//right block
+                totalArea+=(A[i][j]*4)+2;
+                }
+            }
+
+        }
+        return totalArea-removedArea;
+    }
