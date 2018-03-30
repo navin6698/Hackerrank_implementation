@@ -73,3 +73,18 @@ public class Solution {
         }
     }
 }
+
+
+
+
+2nd:
+Java 8 Solution in O(n + m)
+    int[] array = of(scores).distinct().toArray();
+    int i = array.length-1;
+    for(int score: alice) {
+        while(i>=0) {
+            if(score>=array[i]) i--;
+            else {System.out.println(i+2); break;}
+        }
+        if(i<0) System.out.println(1);
+    }
