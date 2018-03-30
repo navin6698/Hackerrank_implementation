@@ -1,4 +1,15 @@
-static int surfaceArea(int[][] A) {
+All the piller has left,right,top and bottom side (might bbe empty side).
+Find the minimum of current block and its {left,right,top,bottom} and remove that
+area from total possible area.
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int surfaceArea(int[][] A) {
        
         int totalArea=0;
         int removedArea=0;
@@ -21,3 +32,19 @@ static int surfaceArea(int[][] A) {
         }
         return totalArea-removedArea;
     }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int H = in.nextInt();
+        int W = in.nextInt();
+        int[][] A = new int[H][W];
+        for(int A_i = 0; A_i < H; A_i++){
+            for(int A_j = 0; A_j < W; A_j++){
+                A[A_i][A_j] = in.nextInt();
+            }
+        }
+        int result = surfaceArea(A);
+        System.out.println(result);
+        in.close();
+    }
+}
