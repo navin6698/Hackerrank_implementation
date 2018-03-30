@@ -1,0 +1,36 @@
+irst, your total (initial) number of chocolates, and wrappers,
+is equal to what you can buy with cash, which is n/c. Now you have to iteratively give your wrappers to the shop keeper, 
+in exchange for chocolates, costing you m wrappers (wrappers / m). During this iterative process you add the chocolates to your total 
+count. You subtract the number of wrappers you have handed in and also add back the number of wrappers you receive from the chocolates
+you are getting back. Here's a java solution.import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int chocolateFeast(int n, int c, int m) {
+        int total = n/c;
+        int wrappers = total;
+        while(wrappers >= m) { 
+            total += (wrappers / m);
+            int leftover = wrappers % m;
+            wrappers = (wrappers / m) + leftover;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            int c = in.nextInt();
+            int m = in.nextInt();
+            int result = chocolateFeast(n, c, m);
+            System.out.println(result);
+        }
+        in.close();
+    }
+}
